@@ -8,81 +8,77 @@
   <style>
     body {
       margin: 0;
-      padding: 0;
       font-family: 'Inter', sans-serif;
-      overflow: hidden;
-      background: #000;
+      background: #0d1117;
       color: white;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       text-align: center;
+      overflow: hidden;
     }
 
     .stars {
-      position: absolute;
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      background: transparent;
-      background: url('https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/media/star-bg.png') repeat;
-      animation: moveStars 100s linear infinite;
+      background: radial-gradient(#ffffff33 1px, transparent 1px),
+                  radial-gradient(#ffffff22 1px, transparent 1px);
+      background-size: 3px 3px;
       z-index: 0;
-      opacity: 0.3;
+      opacity: 0.08;
+      animation: starsMove 120s linear infinite;
     }
 
-    @keyframes moveStars {
-      from { background-position: 0 0; }
-      to { background-position: -10000px 5000px; }
+    @keyframes starsMove {
+      from { background-position: 0 0, 0 0; }
+      to { background-position: 1000px 1000px, -1000px -1000px; }
     }
 
     .container {
       position: relative;
-      z-index: 2;
+      z-index: 1;
       max-width: 650px;
       padding: 40px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.05);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.04);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
     }
 
     h1 {
       font-size: 3.2rem;
       margin-bottom: 0.5em;
-      background: linear-gradient(to right, #00c6ff, #ff0080, #ff8c00);
+      background: linear-gradient(to right, #00c6ff, #ff00cc, #ffcc00);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: pulseColor 8s ease-in-out infinite;
-    }
-
-    @keyframes pulseColor {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
     }
 
     p {
-      font-size: 1.3rem;
-      margin-bottom: 1.8em;
+      font-size: 1.2rem;
+      margin-bottom: 1.5em;
       color: #dddddd;
+      line-height: 1.6;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 28px;
+      padding: 12px 24px;
       background: #00c6ff;
-      border: none;
-      border-radius: 10px;
       color: black;
       font-weight: bold;
+      border: none;
+      border-radius: 10px;
       text-decoration: none;
+      box-shadow: 0 0 15px rgba(0,198,255,0.4);
       transition: 0.3s ease;
-      box-shadow: 0 0 15px rgba(0,198,255,0.6);
     }
 
     .btn:hover {
-      background: #0088cc;
-      box-shadow: 0 0 20px rgba(0,198,255,0.9);
+      background: #009ad6;
+      box-shadow: 0 0 25px rgba(0,198,255,0.7);
     }
 
     .tagline {
@@ -94,11 +90,24 @@
 </head>
 <body>
   <div class="stars"></div>
+
   <div class="container">
     <h1>🔐 Synko</h1>
-    <p>Your AI-powered password manager.<br/>Smart. Secure. Interstellar.</p>
-    <a href="signup.html" class="btn">Start Your Journey 🚀</a>
-    <p class="tagline">“The future belongs to those who secure it.”</p>
+   <p>
+  Synko isn’t just another password manager — it’s the intelligent guardian of your digital identity.  
+  Built with precision, powered by AI, and designed to fight modern threats that others don’t even see coming.  
+  <br/><br/>
+  We’re not revealing everything just yet… but let’s just say:  
+  the future of personal security is smarter, faster, and quietly watching your back.  
+  <br/><br/>
+  🛠️ Web vault & Chrome Extension arriving by <strong>August 2025</strong>.<br/>
+  🧠 What comes after? Let's just say... it listens.
+</p>
+
+
+    <a href="signup.html" class="btn">Join the Waitlist</a>
+    <p class="tagline">Built for tomorrow. Securing you today.</p>
   </div>
 </body>
 </html>
+
